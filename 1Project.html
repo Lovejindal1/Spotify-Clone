@@ -1,296 +1,159 @@
-body{
-    font-family: "Montserrat", sans-serif;
-    margin: 0;
-    background-color: #000;
-    color: #fff;
-    overflow: hidden;
-}
-.main{
-    display: flex;
-    height: 100vh;
-    padding: 0.5rem;
-}
-.sidebar{
-    background-color: black;
-    width: 340px;
-    border-radius: 1rem;    /*1rem=16px*/
-    margin-right: 0.5rem;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="assets/logo.png">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="1Project.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="sidebar">
+            <div class="nav">
+                <div class="nav-option" style="opacity: 1;">
+                    <i class="fa-solid fa-house"></i>
+                    <a href="#">Home</a>
+                </div>
+                <div class="nav-option">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <a href="#">Search</a>
+                </div>
+            </div>
+            <div class="library">
+                <div class="options">
+                    <div class="lib-option nav-option">
+                        <img src="assets/library_icon.png">
+                        <a href="#">Your Library</a>                    
+                    </div>
+                    <div class="icons">
+                        <i class="fa-solid fa-plus"></i>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="lib-box">
+                    <div class="box">
+                        <p class="box-para1">Create your first playlist</p>
+                        <p class="box-para2">It's easy, we'll help you</p>
+                        <button class="badge">Create playlist</button>
+                    </div>
+                    <div class="box">
+                        <p class="box-para1">Let's find some podcasts to follow</p>
+                        <p class="box-para2">We'll keep you updated on new episodes</p>
+                        <button class="badge">Browse podcasts</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-}
-.main-content{
-    background-color: #121212;
-    flex: 1;
-    border-radius: 1rem;
-    overflow: auto;
-    padding: 0 1.5rem 0 1.5rem; 
-}
-.music-player{
-    background-color: black;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 72px;
-}
-a{
-    text-decoration: none;
-    color: white;
-}
-.nav{
-    background-color: #121212;
-    border-radius: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100px;
-    padding: 0.5rem 0.75rem
-}
-.nav-option{
-    line-height: 2.5rem;
-    opacity: 0.7;
-    padding: 0.5rem 0.75rem;
-}
-.nav-option:hover{
-    opacity: 1;
-}
-.nav-option i{
-    font-size: 1.25rem;
-}
-.nav-option a{
-    font-size: 1rem;
-    margin-left: 1rem;
-}
-.library{
-    background-color: #121212;
-    border-radius: 1rem;
-    height: 100%;
-    margin-top: .5rem;
-    padding: 0.5rem 0.75rem;
-}
-.options{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.lib-option img{
-    height: 1.25rem;
-    width: 1.25rem;
-}
-.icons{
-    font-size: 1.25rem;
-    display: flex;
-}
-.icons i{
-    opacity: 0.7;
-    margin-right: 1rem;
-}
-.icons i:hover{
-    opacity: 1;
-}
-.box{
-    background-color: #232323;
-    height: 8rem;
-    border-radius: .75rem;
-    margin: 0.75rem 0 1.75rem 0 ;
-    padding: 1rem 1.25rem;
-}
-.box-para1{
-    font-size: 1rem;
-    font-weight: 500 ;
-}
-.box-para2{
-    font-size: 0.75rem;
-    opacity: 0.9;
-}
-.badge{
-    border:none;
-    border-radius: 100px;
-    padding: 0.25rem 1rem;
-    font-weight: 700;
-    margin-top: 0.5rem;
-    height: 2rem;
-    width: fit-content;
-}
-.badge:hover{
-    box-shadow: 0.5px 0.5px 5px #fff;
-}
-.dark-badge{
-    background-color: #000;
-    color: #fff;
-}
-.dark-badge:hover{
-    box-shadow: 0.5px 0.5px 5px #000;
-}
-.sticky-nav{
-    position: sticky;
-    top: 0;
-    background-color: #121212;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0 1rem 0;
-    z-index: 10;
-}
-.sticky-nav-icon{
-    margin-left: 0.75rem;
-}
-.sticky-nav-icon img:hover{
-    box-shadow: 0.5px 0.5px 1px #fff;
-}
-.sticky-nav-option{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.sticky-nav-option i:hover{
-     box-shadow: 0.15px 0.25px 2px #fff;
-}
+        <div class="main-content">
+            <div class="sticky-nav">
+                <div class="sticky-nav-icon">
+                    <img src="assets/backward_icon.png">
+                    <img src="assets/forward_icon.png" class="hide">
+                </div>
+                <div class="sticky-nav-option">
+                    <button class="badge nav-item hide">Explore Premium</button>
+                    <button class="badge nav-item dark-badge"><i class="fa-regular fa-circle-down" style="margin-right: 5px;"></i>Install App</button>
+                    <i class="fa-regular fa-user nav-item"></i>
+                </div>
+            </div>
 
-.nav-item{
-    margin-right: 1rem;
-}
-@media(max-width:1000px){
-    .hide{
-        display: none;
-    }
-} 
-.card{
-    background-color: #232323;
-    width: 150px;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    margin-left: 1.5rem;
-    margin-top: 1rem;
-}
-.cards-container{
-    display: flex;
-    flex-wrap: wrap;
-   
-}
-.card-img{
-    width: 100%;
-    border-radius: 0.5rem;
+            <div class="cards">
+                <h2>Recently Played</h2>
+                <div class="cards-container">
+                    <div class="card">
+                        <img src="assets/card1img.jpeg" class="card-img">
+                        <p class="card-title">Top 50 - Global</p>
+                        <p class="card-info">Your daily updates of the most played...</p> 
+                    </div>
+                </div>
 
-}
-.card-title{
-    font-weight: 600;
-}
-.card-info{
-    font-size: 0.85rem;
-    opacity: 0.8;
-} 
-.footer{
-    height: 300px;
-    display: flex;
+                <h2>Trending now near you</h2>
+                <div class="cards-container">
+                    <div class="card">
+                        <img src="assets/card2img.jpeg" class="card-img">
+                        <p class="card-title">Mahiye Jinna Sohna</p>
+                        <p class="card-info">Darshan Raval</p> 
+                    </div>
+                    <div class="card">
+                        <img src="assets/card3img.jpeg" class="card-img">
+                        <p class="card-title">Mere Paas Tum Ho</p>
+                        <p class="card-info">Rahat Fateh Ali Khan</p> 
+                    </div>
+                    <div class="card">
+                        <img src="assets/card4img.jpeg" class="card-img">
+                        <p class="card-title">Naa Ready (From "Leo")</p>
+                        <p class="card-info">Anirudh Ravichander, Vijay...</p> 
+                    </div>
+                    <div class="card">
+                        <img src="assets/card2img.jpeg" class="card-img">
+                        <p class="card-title">Mahiye Jinna Sohna</p>
+                        <p class="card-info">Darshan Raval</p> 
+                    </div>
+                </div>
 
-    align-items: center;
-    justify-content: center;
-}
-.line{
-    width: 90%;
-    height: 50%;
-    border-top: 1px solid white;
-    opacity: 0.4;
-}
-.music-player{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.album{
-    width: 25%;
-}
-.player{
-    width: 50%;
-    margin: 1rem;
-}
-.controls{
-    width: 25%;
-}
+                <h2>Featured Charts</h2>
+                <div class="cards-container">
+                    <div class="card">
+                        <img src="assets/card5img.jpeg" class="card-img">
+                        <p class="card-title">Top songs - Global</p>
+                        <p class="card-info">Your daily updates of the most played...</p> 
+                    </div>
+                    <div class="card">
+                        <img src="assets/card6img.jpeg" class="card-img">
+                        <p class="card-title">Top songs - India</p>
+                        <p class="card-info">Your daily updates of the most played...</p> 
+                    </div>
+                    <div class="card">
+                        <img src="assets/card1img.jpeg" class="card-img">
+                        <p class="card-title">Top 50 - Global</p>
+                        <p class="card-info">Your daily updates of the most played...</p> 
+                    </div>
+                </div>
 
-.palyer-controls{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-.palyer-controls-icon{
-    height: 1.25rem;
-    margin-left: 2rem;
-    opacity: 0.7;
+                <div class="footer">
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
 
-}
-.palyer-controls-icon:hover{
-    opacity: 1;
-}
-.playback-bar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 2rem;
-    margin-top: 0.5rem;
-}
-.progress-bar{
-    width: 70%;
-    appearance: none;
-    background-color: transparent;
-    cursor: pointer;
-}
+        <div class="music-player">
+            <div class="album">
+                <div class="album-img">
+                    <img src="assets/Screenshot 2025-06-14 001747.png">
+                </div>
+                <div class="album-info">
+                    <div class="album-first">Daylight</div>
+                    <div class="album-sec">David Kushner</div>
+                </div>
+                <div class="album-icons">
+                    <i class="fa-regular fa-heart"></i>
+                    <img src="assets/icon.png">
+                </div>
+            </div>
 
+            <div class="player">
+                <div class="palyer-controls">
+                    <img src="assets/player_icon1.png" class="palyer-controls-icon">
+                    <img src="assets/player_icon2.png" class="palyer-controls-icon">
+                    <img src="assets/player_icon3.png" class="palyer-controls-icon" style="opacity: 1; height: 2rem;">
+                    <img src="assets/player_icon4.png" class="palyer-controls-icon">
+                    <img src="assets/player_icon5.png" class="palyer-controls-icon">
+                </div>
+                <div class="playback-bar">
+                    <span class="curr-time">00.00</span>
+                    <input type="range" min="0" max="100" class="progress-bar">
+                    <span class="tot-time">3.33</span>
+                </div>
+            </div>
 
-.progress-bar::-webkit-slider-runnable-track{
-    background-color: #ddd;
-    border-radius: 100px;
-    height: 0.2rem;
-
-}
-.progress-bar::-webkit-slider-thumb{
-    appearance: none;
-    height: 1rem;
-    width: 1rem;
-    border-radius: 50%;
-    margin-top: -6px;
-    background-color: #1bd760;
-}
-.album{
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-}
-.album-img img {
-    height: 56px;
-    width: 56px;
-    border-radius: 5px;
-    object-fit: cover;
-    margin-left: 10px;
-}
-.album-info{
-    margin: 0.5rem;
-}
-.album-first{
-    font-size: 0.85rem ;
-    font-weight: 600;
-}
-.album-sec{
-    font-size: 0.65rem;
-    opacity: 0.5;
-}
-.album-info div{
-    margin: 0.35rem;
-}
-.album-icons {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* spacing between icons */
- 
-}
-
-
-.album-icons img {
-    height: 25px;
-    width: 25px;
-    display: inline-block;
-    object-fit: contain;
-}
-.album-icons i{
-    opacity: 0.5;
-}
+            <div class="controls"></div>
+        </div>
+    </div>
+</body>
+</html>
